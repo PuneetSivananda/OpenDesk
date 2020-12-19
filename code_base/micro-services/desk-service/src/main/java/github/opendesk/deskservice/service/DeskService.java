@@ -1,6 +1,8 @@
 package github.opendesk.deskservice.service;
 
+import github.opendesk.deskservice.model.Booking;
 import github.opendesk.deskservice.model.Desk;
+import github.opendesk.deskservice.model.Organisation;
 
 import java.util.List;
 
@@ -13,11 +15,19 @@ public interface DeskService {
 
     void deleteDesk(String deskId);
 
-    List getDesks();
+    List<Desk> getDesks();
 
-    List getDesksByOrgIdSiteIdAndFloorId(String orgId, String siteId, String floorId);
+    List<Desk> getDesksByOrgIdSiteIdAndFloorId(String orgId, String siteId, String floorId);
 
-    List getDesksByOrgIdAndSiteId(String orgId, String siteId);
+    List<Desk> getDesksByOrgIdAndSiteId(String orgId, String siteId);
 
-    List getDesksByOrgId(String orgId);
+    List<Desk> getDesksByOrgId(String orgId);
+
+    Desk checkAvailability(List bookings, Booking booking);
+    /**
+     *
+     * @param organisation
+     * @return
+     */
+    List<Desk> persistDesks(Organisation organisation);
 }
