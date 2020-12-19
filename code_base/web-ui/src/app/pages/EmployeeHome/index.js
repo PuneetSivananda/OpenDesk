@@ -1,7 +1,6 @@
 import React from "react";
 import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
-import SideDrawer from "./components/SideDrawer";
-import EmployeeHome from '../EmployeeHome/index'
+
 const theme = createMuiTheme({
   palette: {
     primary: {
@@ -13,14 +12,15 @@ const theme = createMuiTheme({
   }
 });
 
-export default function Index() {
+const EmployeeHome = () =>{
   return (
     <ThemeProvider theme={theme}>
       <div>
-        <SideDrawer />
+        Employee Home
       </div>
-      <EmployeeHome/>
     </ThemeProvider>
 
   );
 }
+
+export default EmployeeHome
