@@ -1,6 +1,7 @@
 import React from "react";
-import { createMuiTheme, ThemeProvider } from "@material-ui/core/styles";
+import { createMuiTheme, ThemeProvider, makeStyles } from "@material-ui/core/styles";
 import SideDrawer from "./components/SideDrawer";
+import Card from '../../components/Card/Card';
 
 const theme = createMuiTheme({
   palette: {
@@ -18,6 +19,7 @@ export default function Index() {
     <ThemeProvider theme={theme}>
       <div>
         <SideDrawer />
+       <Card/>
       </div>
     </ThemeProvider>
 
